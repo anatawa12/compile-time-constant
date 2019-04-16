@@ -14,7 +14,7 @@ import java.io.File
 fun Project.apply() {
 	plugins.apply(JavaPlugin::class.java)
 
-	val sourceSets = convention.getByType(SourceSetContainer::class.java)
+	val sourceSets = project.convention.findPlugin(JavaPluginConvention::class.java)?.sourceSets ?: return;
 
 	sourceSets.all { sourceSet ->
 		val compileJava = tasks.getByName(sourceSet.getCompileTaskName("java"))
