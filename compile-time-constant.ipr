@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="com.anatawa12.compile-time-constant.main" target="1.8" />
       <module name="com.anatawa12.example.compile-time-constant.example.main" target="1.8" />
+      <module name="compile-time-constant" target="1.8" />
+      <module name="compile-time-constant.example" target="1.8" />
       <module name="compile-time-constant.example.main" target="1.8" />
       <module name="compile-time-constant.example.test" target="1.8" />
       <module name="compile-time-constant.main" target="1.8" />
