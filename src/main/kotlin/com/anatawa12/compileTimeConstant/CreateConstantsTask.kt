@@ -26,7 +26,6 @@ open class CreateConstantsTask() : DefaultTask() {
         }
 
     @OutputFile
-    @Input
     final var output: File = File(project.buildDir, "compile-time-constant/constants-$sourceSetName.jar")
         private set
 
