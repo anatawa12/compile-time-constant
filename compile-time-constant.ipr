@@ -11,9 +11,15 @@
     </bytecodeTargetLevel>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
@@ -22,7 +28,6 @@
             <option value="$PROJECT_DIR$/example" />
           </set>
         </option>
-        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>
@@ -58,144 +63,27 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="MavenRepo" />
+      <option name="name" value="MavenRepo" />
+      <option name="url" value="https://repo.maven.apache.org/maven2/" />
+    </remote-repository>
+  </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
   <component name="libraryTable">
-    <library name="Gradle: org.jetbrains.intellij.deps:trove4j:1.0.20181211">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.intellij.deps/trove4j/1.0.20181211/216c2e14b070f334479d800987affe4054cd563f/trove4j-1.0.20181211.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.intellij.deps/trove4j/1.0.20181211/fff84a7f9b3215e7ef684672d0adf2853e20040a/trove4j-1.0.20181211-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Gradle: org.jetbrains.kotlin:kotlin-android-extensions:1.3.21">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.3.21/311c0d1cbb0a194e8712edaef7b92a8f0919ca26/kotlin-android-extensions-1.3.21.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.3.21/13b53735a9e9414622ac155feaaaf7aee6b1c91e/kotlin-android-extensions-1.3.21-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.3.21/13b53735a9e9414622ac155feaaaf7aee6b1c91e/kotlin-android-extensions-1.3.21-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Gradle: org.jetbrains.kotlin:kotlin-annotation-processing-gradle:1.3.21">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.3.21/225aacd70ddfe71c72796bb317b3f12254c1ff3a/kotlin-annotation-processing-gradle-1.3.21.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.3.21/4ee2ad95b0e2c0a5616c445f5a01f46ac2d26ee0/kotlin-annotation-processing-gradle-1.3.21-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.3.21/4ee2ad95b0e2c0a5616c445f5a01f46ac2d26ee0/kotlin-annotation-processing-gradle-1.3.21-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Gradle: org.jetbrains.kotlin:kotlin-build-common:1.3.21">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-common/1.3.21/9fafa0a2bec9a6d530afbff04e894bc85ebfed01/kotlin-build-common-1.3.21.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-build-common/1.3.21/9e68bcb1a786b3ba9918e331723b5381ee8ec477/kotlin-build-common-1.3.21-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Gradle: org.jetbrains.kotlin:kotlin-compiler-embeddable:1.3.21">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.3.21/677cc9553b8964c895abc76da9b6a0faea8f671d/kotlin-compiler-embeddable-1.3.21.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.3.21/2aa36f56168580f859784ce6c5a2aa87572cc643/kotlin-compiler-embeddable-1.3.21-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.3.21/2aa36f56168580f859784ce6c5a2aa87572cc643/kotlin-compiler-embeddable-1.3.21-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Gradle: org.jetbrains.kotlin:kotlin-compiler-runner:1.3.21">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-runner/1.3.21/2dd0fb04b6e1440e8bcf822f693630ffa1216615/kotlin-compiler-runner-1.3.21.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-runner/1.3.21/11cd62e09403e421516f80272544b0952e10c23e/kotlin-compiler-runner-1.3.21-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Gradle: org.jetbrains.kotlin:kotlin-daemon-client:1.3.21">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-client/1.3.21/b5282a8f1152d443f2cdc6ea0bbe895ee30b1239/kotlin-daemon-client-1.3.21.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-client/1.3.21/11b1732e9562e6ef628e2c435e04b8e4aaf5076/kotlin-daemon-client-1.3.21-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Gradle: org.jetbrains.kotlin:kotlin-gradle-plugin-api:1.3.21">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-api/1.3.21/9eadd21553b39ec3bd9549ce702064de4ab49ecd/kotlin-gradle-plugin-api-1.3.21.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-api/1.3.21/d6b68351334b321aed15db2b75969b7b922c7c6e/kotlin-gradle-plugin-api-1.3.21-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Gradle: org.jetbrains.kotlin:kotlin-gradle-plugin-model:1.3.21">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-model/1.3.21/4a5711a73924e753730e2afcd610af6ff983efa5/kotlin-gradle-plugin-model-1.3.21.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-model/1.3.21/4cbe30c37ab84f84e4e5a9e65c761e70f74ceea6/kotlin-gradle-plugin-model-1.3.21-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Gradle: org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.21">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin/1.3.21/b6a5758c55aa1c0189b136fb888d24bfec5978cf/kotlin-gradle-plugin-1.3.21.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin/1.3.21/3c999f173a5a5eaf4e1bccea848eff32c7272898/kotlin-gradle-plugin-1.3.21-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Gradle: org.jetbrains.kotlin:kotlin-native-utils:1.3.21">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-native-utils/1.3.21/81929ae402824cfad58663ba500e0aaa0d327b8e/kotlin-native-utils-1.3.21.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-native-utils/1.3.21/2240e1cf9017facb0bfaed07367b119a20a5964b/kotlin-native-utils-1.3.21-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Gradle: org.jetbrains.kotlin:kotlin-reflect:1.3.21">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.3.21/d0d5ff2ac2ebd8a42697af41e20fc225a23c5d3b/kotlin-reflect-1.3.21.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.3.21/a30e058efd57c50515227c894abed1db20edb2b5/kotlin-reflect-1.3.21-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Gradle: org.jetbrains.kotlin:kotlin-script-runtime:1.3.21">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/1.3.21/29363d474ee6fda354900636320a177c7286def9/kotlin-script-runtime-1.3.21.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/1.3.21/3d39f81e59ff74948f4dd74fb92f21f4c5f2ca6f/kotlin-script-runtime-1.3.21-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Gradle: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.3.21">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-compiler-embeddable/1.3.21/510f640ddab3074a890450f870e65630cf5e0055/kotlin-scripting-compiler-embeddable-1.3.21.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-compiler-embeddable/1.3.21/229f636b341b7d7f9ca73f754b3bb8ee1b0e7833/kotlin-scripting-compiler-embeddable-1.3.21-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-compiler-embeddable/1.3.21/229f636b341b7d7f9ca73f754b3bb8ee1b0e7833/kotlin-scripting-compiler-embeddable-1.3.21-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.3.21" type="kotlin.common">
       <CLASSES>
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.21/f30e4a9897913e53d778f564110bafa1fef46643/kotlin-stdlib-common-1.3.21.jar!/" />
@@ -253,7 +141,9 @@
       <CLASSES>
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/7.1/fa29aa438674ff19d5e1386d2c3527a0267f291e/asm-7.1.jar!/" />
       </CLASSES>
-      <JAVADOC />
+      <JAVADOC>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/7.1/c9fc020e4f8720a02b9ede027883b15f645c444c/asm-7.1-javadoc.jar!/" />
+      </JAVADOC>
       <SOURCES>
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/7.1/9d170062d595240da35301362b079e5579c86f49/asm-7.1-sources.jar!/" />
       </SOURCES>
