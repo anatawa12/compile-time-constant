@@ -2,15 +2,19 @@ plugins {
     id("java")
     kotlin("jvm") version "1.4.30"
     `java-gradle-plugin`
+    `maven-publish`
+    signing
 }
 
-apply(from = "https://gist.githubusercontent.com/anatawa12/75cb9a093bc93ed473a7ca2ac489eaf9/raw/aec03f39610fa231acfbb000855a337d63d59510/gradle-mvn-push.gradle")
-
-group = project.property("GROUP")!!
-version = project.property("VERSION_NAME")!!
+group = "com.anatawa12"
+version = "1.0.1"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_6
+    @Suppress("UnstableApiUsage")
+    withSourcesJar()
+    @Suppress("UnstableApiUsage")
+    withJavadocJar()
 }
 
 repositories {
@@ -31,6 +35,75 @@ gradlePlugin {
             description = "A plugin to create constants class from gradle."
             id = "com.anatawa12.compile-time-constant"
             implementationClass = "com.anatawa12.compileTimeConstant.PluginMain"
+        }
+    }
+}
+
+publishing.publications.create<MavenPublication>("maven") {
+    from(components["java"])
+    pom {
+        name.set("Compile Time Constant")
+        description.set("A plugin to create constants class from gradle.")
+        url.set("https://github.com/anatawa12/compile-time-constant#readme")
+        licenses {
+            license {
+                name.set("Apache License 2.0")
+                url.set("https://www.apache.org/licenses/LICENSE-2.0")
+            }
+        }
+        developers {
+            developer {
+                id.set("anatawa12")
+                name.set("anatawa12")
+                email.set("anatawa12@icloud.com")
+            }
+        }
+        scm {
+            connection.set("scm:git:git://github.com/anatawa12/compile-time-constant.git")
+            developerConnection.set("scm:git:ssh://github.com:anatawa12/compile-time-constant.git")
+            url.set("https://github.com/anatawa12/compile-time-constant/tree/master")
+        }
+    }
+}
+
+fun isReleaseBuild() = !version.toString().contains("SNAPSHOT")
+
+fun getReleaseRepositoryUrl(): String {
+    return project.findProperty("RELEASE_REPOSITORY_URL")?.toString()
+        ?: "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+}
+
+fun getSnapshotRepositoryUrl(): String {
+    return project.findProperty("SNAPSHOT_REPOSITORY_URL")?.toString()
+        ?: "https://oss.sonatype.org/content/repositories/snapshots/"
+}
+
+signing {
+    publishing.publications.forEach { publication ->
+        sign(publication)
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "mavenCentral"
+            url = uri(if (isReleaseBuild()) getReleaseRepositoryUrl() else getSnapshotRepositoryUrl())
+
+            credentials {
+                username = project.findProperty("com.anatawa12.sonatype.username")?.toString() ?: ""
+                password = project.findProperty("com.anatawa12.sonatype.passeord")?.toString() ?: ""
+            }
+        }
+    }
+}
+
+tasks.withType<PublishToMavenRepository>().configureEach {
+    onlyIf {
+        if (repository.name == "mavenCentral") {
+            publication.name != "compile-time-constantPluginMarkerMaven"
+        } else {
+            true
         }
     }
 }
