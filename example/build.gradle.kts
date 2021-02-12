@@ -1,43 +1,51 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import com.anatawa12.compileTimeConstant.CreateConstantsTask
+
 buildscript {
     repositories {
         mavenCentral()
     }
 
     dependencies {
-        classpath "com.anatawa12:compile-time-constant:1.0.1"
+        classpath("com.anatawa12:compile-time-constant:1.0.1")
     }
 }
 
 plugins {
-    id 'java'
-    id 'org.jetbrains.kotlin.jvm'
-    id 'application'
+    id("java")
+    id("org.jetbrains.kotlin.jvm")
+    id("application")
 }
 
-apply plugin: 'com.anatawa12.compile-time-constant'
+apply(plugin = "com.anatawa12.compile-time-constant")
 
-group GROUP
-version VERSION_NAME
+group = property("GROUP")!!
+version = property("VERSION_NAME")!!
 
-sourceCompatibility = 1.8
-mainClassName = "com.anatawa12.compileTimeConstant.example.MainKt"
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+}
+
+application {
+    mainClassName = "com.anatawa12.compileTimeConstant.example.MainKt"
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
 
-createCompileTimeConstant {
+val createCompileTimeConstant by tasks.getting(CreateConstantsTask::class) {
     constantsClass = "com.anatawa12.compileTimeConstant.example.Constants"
-    values version: VERSION_NAME
+    values(mapOf("version" to project.property("VERSION_NAME")!! as String))
 }
 
-compileKotlin {
+val compileKotlin by tasks.getting(KotlinCompile::class) {
     kotlinOptions.jvmTarget = "1.8"
 }
-compileTestKotlin {
+val compileTestKotlin by tasks.getting(KotlinCompile::class) {
     kotlinOptions.jvmTarget = "1.8"
 }

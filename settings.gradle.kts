@@ -1,3 +1,3 @@
-rootProject.name = 'compile-time-constant'
+rootProject.name = "compile-time-constant"
 
 include("example")
