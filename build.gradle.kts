@@ -26,7 +26,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
     implementation(gradleApi())
     implementation(localGroovy())
-    implementation("org.ow2.asm:asm:7.1")
+    implementation("org.ow2.asm:asm:9.1")
 }
 
 gradlePlugin {
