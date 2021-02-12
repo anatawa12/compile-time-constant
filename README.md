@@ -35,6 +35,17 @@ Task name for sourceSet `main` is `createCompileTimeConstant` and for other sour
 - values(Map<String, Object>)
   This is method.\
   Map value must be either wrapped primitive or `String`.
+  
+## Global Options
+
+can be configured with `compileTimeConstant {}`
+
+- ``alwaysGenerateJarFile``
+
+  If this is true, if the `constantsClass` is not set, this plugin will generate empty jar file at output path.
+  If false, this plugin will never generate jar file.
+
+  Defaults false.
 
 ## License
 
