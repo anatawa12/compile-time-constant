@@ -16,7 +16,7 @@ import java.util.zip.ZipEntry
 import java.util.zip.ZipOutputStream
 
 @CacheableTask
-class CreateConstantsTask() : DefaultTask() {
+open class CreateConstantsTask() : DefaultTask() {
 
     @get:Input
     final var sourceSetName: String? = null

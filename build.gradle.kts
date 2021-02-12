@@ -3,7 +3,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.3.21"
-    id("org.jetbrains.kotlin.plugin.allopen") version "1.3.21"
     `java-gradle-plugin`
 }
 
@@ -48,8 +47,3 @@ gradlePlugin {
         }
     }
 }
-
-allOpen {
-    annotation("org.gradle.api.tasks.CacheableTask")
-}
-
