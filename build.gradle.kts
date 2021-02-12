@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.4.30"
@@ -12,7 +10,7 @@ group = project.property("GROUP")!!
 version = project.property("VERSION_NAME")!!
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_1_6
 }
 
 sourceSets {
@@ -24,17 +22,10 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib")
     implementation(gradleApi())
     implementation(localGroovy())
     implementation("org.ow2.asm:asm:7.1")
-}
-
-val compileKotlin by tasks.getting(KotlinCompile::class) {
-    kotlinOptions.jvmTarget = "1.8"
-}
-val compileTestKotlin by tasks.getting(KotlinCompile::class) {
-    kotlinOptions.jvmTarget = "1.8"
 }
 
 gradlePlugin {
