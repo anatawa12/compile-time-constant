@@ -109,6 +109,7 @@ tasks.withType<PublishToMavenRepository>().configureEach {
     onlyIf {
         if (repository.name == "mavenCentral") {
             publication.name != "compile-time-constantPluginMarkerMaven"
+                    && publication.name != "pluginMaven"
         } else {
             true
         }
