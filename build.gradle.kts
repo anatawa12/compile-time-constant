@@ -13,10 +13,6 @@ java {
     sourceCompatibility = JavaVersion.VERSION_1_6
 }
 
-sourceSets {
-
-}
-
 repositories {
     mavenCentral()
 }
