@@ -14,6 +14,8 @@ import java.io.File
 fun Project.apply() {
 	plugins.apply(JavaPlugin::class.java)
 
+	val extension = project.extensions.create("compileTimeConstant", CompileTimeConstantExtension::class.java)
+
 	val sourceSets = project.convention.findPlugin(JavaPluginConvention::class.java)?.sourceSets ?: return;
 
 	sourceSets.all { sourceSet ->

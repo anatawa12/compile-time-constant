@@ -12,21 +12,30 @@ import org.objectweb.asm.Type.*
 import java.io.File
 import java.io.Serializable
 import java.lang.IllegalArgumentException
+import java.util.concurrent.Callable
 import java.util.zip.ZipEntry
 import java.util.zip.ZipOutputStream
 
 @CacheableTask
 open class CreateConstantsTask() : DefaultTask() {
+    private val alwaysGenerateJarFile get() = project.extensions
+        .findByType(CompileTimeConstantExtension::class.java)
+        ?.alwaysGenerateJarFile
+        ?: false
+
+    init {
+        inputs.property("alwaysGenerateJarFile", Callable { alwaysGenerateJarFile })
+    }
 
     @get:Input
-    final var sourceSetName: String? = null
+    var sourceSetName: String? = null
         set(value) {
             field = value
             output = File(project.buildDir, "compile-time-constant/constants-$sourceSetName.jar")
         }
 
     @OutputFile
-    final var output: File = File(project.buildDir, "compile-time-constant/constants-$sourceSetName.jar")
+    var output: File = File(project.buildDir, "compile-time-constant/constants-$sourceSetName.jar")
         private set
 
     @Input
@@ -61,10 +70,11 @@ open class CreateConstantsTask() : DefaultTask() {
         val constantsClass = constantsClass.replace('.', '/')
         if (constantsClass == "") {
             System.err.println("No value has been specified for property 'constantsClass'.")
+            if (alwaysGenerateJarFile) generateEmptyJarFile()
             return
         }
         val cw = ClassWriter(COMPUTE_FRAMES)
-        val cv = cw as ClassVisitor;
+        val cv = cw as ClassVisitor
         cv.visit(V1_6, ACC_PUBLIC + ACC_FINAL + ACC_SUPER, constantsClass, null, "java/lang/Object", null)
         for ((name, value) in values) {
             val descriptor = when (value) {
@@ -90,11 +100,16 @@ open class CreateConstantsTask() : DefaultTask() {
         mv.visitMaxs(1, 1)
         mv.visitEnd()
         cv.visitEnd()
-        output.parentFile.mkdirs();
+        output.parentFile.mkdirs()
         ZipOutputStream(output.outputStream()).use { zipOut ->
             zipOut.putNextEntry(ZipEntry("$constantsClass.class"))
             zipOut.write(cw.toByteArray())
             zipOut.closeEntry()
         }
+    }
+
+    private fun generateEmptyJarFile() {
+        output.parentFile.mkdirs()
+        ZipOutputStream(output.outputStream()).use {}
     }
 }
