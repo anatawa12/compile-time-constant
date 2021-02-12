@@ -1,6 +1,7 @@
 plugins {
     id("java")
     kotlin("jvm") version "1.4.30"
+    id("com.gradle.plugin-publish") version "0.12.0"
     `java-gradle-plugin`
     `maven-publish`
     signing
@@ -37,6 +38,12 @@ gradlePlugin {
             implementationClass = "com.anatawa12.compileTimeConstant.PluginMain"
         }
     }
+}
+
+pluginBundle {
+    website = "https://github.com/anatawa12/compile-time-constant"
+    vcsUrl = "https://github.com/anatawa12/compile-time-constant"
+    tags = listOf("buildconstants", "constants")
 }
 
 publishing.publications.create<MavenPublication>("maven") {
