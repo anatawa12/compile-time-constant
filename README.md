@@ -1,23 +1,16 @@
 # Compile Time Constant
+
+[![Gradle Plugin Portal](https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/com/anatawa12/compile-time-constant/com.anatawa12.compile-time-constant.gradle.plugin/maven-metadata.xml.svg?colorB=007ec6&label=gradle&logo=gradle)](https://plugins.gradle.org/plugin/com.anatawa12.compile-time-constant)
+
 This is a plugin to create constants class from gradle.
 
 ## How to use
 please add this to head of `build.gradle`.
 
 ```groovy
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    
-    dependencies {
-        classpath "com.anatawa12:compile-time-constant:1.0.2"
-    }
+plugins {
+  id("com.anatawa12.compile-time-constant") version "1.0.2"
 }
-
-// if you using plugins block, please write here.
-
-apply plugin: 'com.anatawa12.compile-time-constant'
 ```
 
 And please set options in task. 
