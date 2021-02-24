@@ -1,5 +1,6 @@
 # Compile Time Constant
 
+[![a12 maintenance: Slowly](https://anatawa12.com/short.php?q=a12-slowly-svg)](https://anatawa12.com/short.php?q=a12-slowly-doc)
 [![Gradle Plugin Portal](https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/com/anatawa12/compile-time-constant/com.anatawa12.compile-time-constant.gradle.plugin/maven-metadata.xml.svg?colorB=007ec6&label=gradle&logo=gradle)](https://plugins.gradle.org/plugin/com.anatawa12.compile-time-constant)
 
 This is a plugin to create constants class from gradle.
