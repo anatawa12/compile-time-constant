@@ -34,11 +34,11 @@ open class CreateConstantsTask() : DefaultTask() {
             output = File(project.buildDir, "compile-time-constant/constants-$sourceSetName.jar")
         }
 
-    @OutputFile
+    @get:OutputFile
     var output: File = File(project.buildDir, "compile-time-constant/constants-$sourceSetName.jar")
         private set
 
-    @Input
+    @get:Input
     var constantsClass: String = ""
 
     @get:Input
