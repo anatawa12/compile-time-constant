@@ -27,6 +27,9 @@ open class CreateConstantsTask() : DefaultTask() {
         inputs.property("alwaysGenerateJarFile", Callable { alwaysGenerateJarFile })
     }
 
+    @get:Internal
+    val configurationName = project.objects.property(String::class.java)
+
     @get:Input
     var sourceSetName: String? = null
         set(value) {

@@ -20,8 +20,10 @@ fun Project.apply() {
 				.apply {
 					sourceSetName = sourceSet.name
 				}
+		@Suppress("UnstableApiUsage")
+		createConstantsTask.configurationName.convention(sourceSet.getTaskName("", "implementation"))
 		afterEvaluate {
-			dependencies.add(sourceSet.getTaskName("", "implementation"), files(createConstantsTask.output)
+			dependencies.add(createConstantsTask.configurationName.get(), files(createConstantsTask.output)
 				.builtBy(createConstantsTask))
 		}
 	}
