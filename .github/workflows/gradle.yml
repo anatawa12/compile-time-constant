@@ -71,7 +71,7 @@ jobs:
       - name: run build
         working-directory: example
         run: |
-        ./gradlew \
-          -I ../example-use-local.init.gradle.kts \
-          -P compile-time-constant-version=1.0.4-SNAPSHOT \
-            build
+          ./gradlew \
+            -I ../example-use-local.init.gradle.kts \
+            -P compile-time-constant-version=1.0.4-SNAPSHOT \
+              build
