@@ -24,6 +24,8 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Publish to maven local via Gradle
+      run: ./gradlew publishToMavenLocal
     - uses: actions/upload-artifact@v2
       with:
         name: maven-achifact
