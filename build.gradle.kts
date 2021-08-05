@@ -4,7 +4,6 @@ plugins {
     id("com.gradle.plugin-publish") version "0.15.0"
     `java-gradle-plugin`
     `maven-publish`
-    signing
 }
 
 group = "com.anatawa12"
@@ -39,6 +38,7 @@ gradlePlugin {
             implementationClass = "com.anatawa12.compileTimeConstant.PluginMain"
         }
     }
+    isAutomatedPublishing = false
 }
 
 pluginBundle {
@@ -86,12 +86,6 @@ fun getSnapshotRepositoryUrl(): String {
         ?: "https://oss.sonatype.org/content/repositories/snapshots/"
 }
 
-signing {
-    publishing.publications.forEach { publication ->
-        sign(publication)
-    }
-}
-
 publishing {
     repositories {
         maven {
@@ -102,17 +96,6 @@ publishing {
                 username = project.findProperty("com.anatawa12.sonatype.username")?.toString() ?: ""
                 password = project.findProperty("com.anatawa12.sonatype.passeord")?.toString() ?: ""
             }
-        }
-    }
-}
-
-tasks.withType<PublishToMavenRepository>().configureEach {
-    onlyIf {
-        if (repository.name == "mavenCentral") {
-            publication.name != "compile-time-constantPluginMarkerMaven"
-                    && publication.name != "pluginMaven"
-        } else {
-            true
         }
     }
 }
