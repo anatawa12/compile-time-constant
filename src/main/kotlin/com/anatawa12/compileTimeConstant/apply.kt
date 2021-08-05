@@ -14,7 +14,8 @@ fun Project.apply() {
 
 	val sourceSets = project.convention.findPlugin(JavaPluginConvention::class.java)?.sourceSets ?: return;
 
-	sourceSets.all { sourceSet ->
+	sourceSets.all {
+		val sourceSet = this
 		val createConstantsTask =
 			tasks.create(sourceSet.getTaskName("create", " compile time constant"), CreateConstantsTask::class.java)
 				.apply {
