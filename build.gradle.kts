@@ -84,17 +84,3 @@ fun getSnapshotRepositoryUrl(): String {
     return project.findProperty("SNAPSHOT_REPOSITORY_URL")?.toString()
         ?: "https://oss.sonatype.org/content/repositories/snapshots/"
 }
-
-publishing {
-    repositories {
-        maven {
-            name = "mavenCentral"
-            url = uri(if (isReleaseBuild()) getReleaseRepositoryUrl() else getSnapshotRepositoryUrl())
-
-            credentials {
-                username = project.findProperty("com.anatawa12.sonatype.username")?.toString() ?: ""
-                password = project.findProperty("com.anatawa12.sonatype.passeord")?.toString() ?: ""
-            }
-        }
-    }
-}
