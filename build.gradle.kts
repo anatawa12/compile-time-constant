@@ -1,8 +1,6 @@
 plugins {
-    id("java")
-    kotlin("jvm") version "1.5.21"
     id("com.gradle.plugin-publish") version "0.15.0"
-    `java-gradle-plugin`
+    `kotlin-dsl`
     `maven-publish`
 }
 
@@ -23,10 +21,11 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib")
-    implementation(gradleApi())
-    implementation(localGroovy())
     implementation("org.ow2.asm:asm:7.1")
+}
+
+kotlinDslPluginOptions {
+    experimentalWarning.set(false)
 }
 
 gradlePlugin {
