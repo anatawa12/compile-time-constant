@@ -1,23 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import com.anatawa12.compileTimeConstant.CreateConstantsTask
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath("com.anatawa12:compile-time-constant:1.0.3")
-    }
-}
-
 plugins {
     id("java")
+    id("com.anatawa12.compile-time-constant") version "1.0.3"
     id("org.jetbrains.kotlin.jvm") version "1.4.30"
     id("application")
 }
-
-apply(plugin = "com.anatawa12.compile-time-constant")
 
 group = property("GROUP")!!
 version = property("VERSION_NAME")!!
