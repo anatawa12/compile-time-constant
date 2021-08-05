@@ -72,15 +72,3 @@ publishing.publications.create<MavenPublication>("maven") {
         }
     }
 }
-
-fun isReleaseBuild() = !version.toString().contains("SNAPSHOT")
-
-fun getReleaseRepositoryUrl(): String {
-    return project.findProperty("RELEASE_REPOSITORY_URL")?.toString()
-        ?: "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
-}
-
-fun getSnapshotRepositoryUrl(): String {
-    return project.findProperty("SNAPSHOT_REPOSITORY_URL")?.toString()
-        ?: "https://oss.sonatype.org/content/repositories/snapshots/"
-}
