@@ -39,6 +39,7 @@ jobs:
     env:
       RELEASER_CHANGER: gradle-properties
     strategy:
+      fail-fast: false
       matrix:
         gradle:
           - "5.0"
