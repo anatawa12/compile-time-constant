@@ -38,6 +38,7 @@ gradlePlugin {
             implementationClass = "com.anatawa12.compileTimeConstant.PluginMain"
         }
     }
+    isAutomatedPublishing = false
 }
 
 pluginBundle {
@@ -95,17 +96,6 @@ publishing {
                 username = project.findProperty("com.anatawa12.sonatype.username")?.toString() ?: ""
                 password = project.findProperty("com.anatawa12.sonatype.passeord")?.toString() ?: ""
             }
-        }
-    }
-}
-
-tasks.withType<PublishToMavenRepository>().configureEach {
-    onlyIf {
-        if (repository.name == "mavenCentral") {
-            publication.name != "compile-time-constantPluginMarkerMaven"
-                    && publication.name != "pluginMaven"
-        } else {
-            true
         }
     }
 }
