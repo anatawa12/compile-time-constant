@@ -4,7 +4,6 @@ plugins {
     id("com.gradle.plugin-publish") version "0.15.0"
     `java-gradle-plugin`
     `maven-publish`
-    signing
 }
 
 group = "com.anatawa12"
@@ -84,12 +83,6 @@ fun getReleaseRepositoryUrl(): String {
 fun getSnapshotRepositoryUrl(): String {
     return project.findProperty("SNAPSHOT_REPOSITORY_URL")?.toString()
         ?: "https://oss.sonatype.org/content/repositories/snapshots/"
-}
-
-signing {
-    publishing.publications.forEach { publication ->
-        sign(publication)
-    }
 }
 
 publishing {
