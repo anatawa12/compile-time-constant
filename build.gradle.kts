@@ -8,7 +8,8 @@ plugins {
 }
 
 group = "com.anatawa12"
-version = "1.0.3"
+@Suppress("UnstableApiUsage")
+version = providers.gradleProperty("version").forUseAtConfigurationTime().get()
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_6
