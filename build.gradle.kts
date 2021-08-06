@@ -44,6 +44,9 @@ pluginBundle {
     website = "https://github.com/anatawa12/compile-time-constant"
     vcsUrl = "https://github.com/anatawa12/compile-time-constant"
     tags = listOf("buildconstants", "constants")
+    mavenCoordinates {
+        groupId = "${project.group}"
+    }
 }
 
 publishing.publications.create<MavenPublication>("maven") {
