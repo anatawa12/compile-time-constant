@@ -67,10 +67,13 @@ jobs:
           ./gradlew publish publishPlugins
           git push && git push --tags
 
-      - uses: ncipollo/release-action@v1
-        with:
-          bodyFile: ${{ steps.up.outputs.RELEASE_NOTE }}
-          token: ${{ github.token }}
+      - name: Create New Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "v$(get-version)" \
+            --target "v$(get-version)" \
+            --notes-file "${{ steps.up.outputs.RELEASE_NOTE }}"
 
       - name: Update To Next Version
         run: |
