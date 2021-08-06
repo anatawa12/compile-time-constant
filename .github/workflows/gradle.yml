@@ -67,15 +67,12 @@ jobs:
           ./gradlew --build-file=empty wrapper
           rm empty
 
-      - id: get
-        run: echo "::set-output name=version:$(get-version)"
-
       - name: run build
         working-directory: example
         run: |
           ./gradlew \
             -I ../example-use-local.init.gradle \
-            -P compile-time-constant-version=${{ steps.get.outputs.version }} \
+            -P compile-time-constant-version=$(get-version) \
             --stacktrace \
               build
 
