@@ -81,7 +81,13 @@ jobs:
 
   conclude:
     runs-on: ubuntu-latest
+    if: ${{ always() }}
     needs:
       - test-with-example
     steps:
-      - run: echo "conclude empty action"
+      - run: echo "test-with-example succeed!"
+        if: ${{ needs.test-with-example.result == 'success' }}
+      - run: |
+          echo "test-with-example failed!"
+          exit 1
+        if: ${{ needs.test-with-example.result != 'success' }}
