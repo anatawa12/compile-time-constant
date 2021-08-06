@@ -72,7 +72,7 @@ jobs:
         run: |
           ./gradlew \
             -I ../example-use-local.init.gradle \
-            -P compile-time-constant-version=$(get-version) \
+            -P compile-time-constant-version=$(cd .. && get-version) \
             --stacktrace \
               build
 
