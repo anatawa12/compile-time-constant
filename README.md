@@ -11,7 +11,7 @@ please add this to head of `build.gradle`.
 
 ```groovy
 plugins {
-  id("com.anatawa12.compile-time-constant") version "1.0.3"
+  id("com.anatawa12.compile-time-constant") version "1.0.4"
 }
 ```
 
