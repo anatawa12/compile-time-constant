@@ -33,6 +33,11 @@ jobs:
           set-version "$VERSION"
           # create changelog
           generate-changelog -v "$VERSION" --date-for-unreleased
+          # update versions in readme and example
+          perl -pi \
+            -e 's/(?<=\Q("com.anatawa12.compile-time-constant") version \E)".*"/"'$VERSION'"/' \
+            README.md \
+            example/build.gradle.kts
           # commit & tag
           git add .
           git commit -m "v$VERSION"
