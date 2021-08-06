@@ -2,7 +2,7 @@ import com.anatawa12.compileTimeConstant.CreateConstantsTask
 
 plugins {
     id("java")
-    id("com.anatawa12.compile-time-constant") version "1.0.4"
+    id("com.anatawa12.compile-time-constant") version "1.0.5"
     id("application")
 }
 
